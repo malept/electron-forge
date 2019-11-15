@@ -205,9 +205,9 @@ export default async ({
 
   d('packaging with options', packageOpts);
 
-  await packager(packageOpts);
+  const packageDirs = await packager(packageOpts);
 
-  await runHook(forgeConfig, 'postPackage');
+  await runHook(forgeConfig, 'postPackage', packageDirs);
 
   if (packagerSpinner) packagerSpinner!.succeed();
 };
