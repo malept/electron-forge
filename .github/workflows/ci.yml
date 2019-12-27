@@ -9,7 +9,17 @@ on:
   pull_request:
 
 jobs:
-  build:
+  dependabolt:
+    if: startsWith(github.event.ref, 'dependabot/') || startsWith(github.event.pull_request.head.ref, 'dependabot/')
+    runs-on: ubuntu-latest
+    steps:
+    - id: checkout_action
+      uses: actions/checkout@v1
+    - name: Run dependabolt
+      uses: docker://malept/gha-dependabolt:2.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
