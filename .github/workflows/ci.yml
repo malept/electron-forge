@@ -132,7 +132,8 @@ jobs:
       - run: bolt docs:sync-readmes
       - run: bolt docs
       - name: Deploy docs
-      - uses: docker://malept/gha-gh-pages:1.0.2
+        uses: docker://malept/gha-gh-pages:1.0.2
+        with:
           showUnderscoreFiles: true
           versionDocs: true
         env:
