@@ -100,7 +100,7 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
           NODE_INSTALLER: ${{ matrix.node-installer }}
   docs:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/doc-publishing'
     needs: test
     runs-on: ubuntu-latest
     steps:
