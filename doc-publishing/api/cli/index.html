@@ -1,0 +1,390 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@electron-forge/cli</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="/assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="/api/cli/index.html" class="title">@electron-forge/cli</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="/api/cli/globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@electron-forge/cli</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#cli" id="cli" style="color: inherit; text-decoration: none;">
+					<h1>CLI</h1>
+				</a>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<p>Electron forge&#39;s CLI is separate from the core module, to install it you will have to use the <code>@electron-forge/cli</code> module from NPM.</p>
+				<pre><code class="language-bash"><span class="hljs-comment"># NPM</span>
+npm i -g @electron-forge/cli
+
+<span class="hljs-comment"># Yarn</span>
+yarn global add @electron-forge/cli</code></pre>
+				<a href="#overview" id="overview" style="color: inherit; text-decoration: none;">
+					<h2>Overview</h2>
+				</a>
+				<p>At a high level the CLI module is just a proxy to the raw <a href="https://js.electronforge.io">API</a> commands.  Almost all the configuration is still done in your Forge Config, the CLI just provides a handy way to trigger all the core functionality of Electron Forge (and you should definitely use it).</p>
+				<a href="#commands" id="commands" style="color: inherit; text-decoration: none;">
+					<h2>Commands</h2>
+				</a>
+				<p>Please note these commands are sorted in alphabetical order, the ones you probably need to care about are <a href="/api/cli/cli.md#start">start</a>, <a href="/api/cli/cli.md#package">package</a>, <a href="/api/cli/cli.md#make">make</a>, and <a href="/api/cli/cli.md#publish">publish</a>. </p>
+				<a href="#import" id="import" style="color: inherit; text-decoration: none;">
+					<h3>Import</h3>
+				</a>
+				<p>Maps to <code>electronForge.import</code>, will attempt to take an existing Electron app and make it Forge compatible. Normally this just creates a base Electron Forge config and adds the required dependencies.</p>
+				<blockquote>
+					<p>There are no flags for the Import command</p>
+				</blockquote>
+				<a href="#init" id="init" style="color: inherit; text-decoration: none;">
+					<h3>Init</h3>
+				</a>
+				<p>Maps to <code>electronForge.init</code>, will initialize a new Forge powered application in the given directory (defaults to <code>.</code>).</p>
+				<p>Please note if you want to use a template, it must be installed globally before running the <code>init</code> command.</p>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">Flag</th>
+							<th align="left">Value</th>
+							<th align="left">Required</th>
+							<th align="left">Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="left"><code>--template</code></td>
+							<td align="left">Template Name</td>
+							<td align="left">No</td>
+							<td align="left">Name of the template to use to make this new app</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--copy-ci-files</code></td>
+							<td align="left">N/A</td>
+							<td align="left">No</td>
+							<td align="left">Set if you want to copy templated CI files for Travis CI and Appveyor</td>
+						</tr>
+				</tbody></table>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h3>Install</h3>
+				</a>
+				<p>Maps to <code>electronForge.install</code>, will attempt to install the Electron app that is published at the given GitHub repository. This command is just a helper for installing other applications quickly.  E.g.</p>
+				<pre><code class="language-bash">electron-forge install atom/atom</code></pre>
+				<a href="#lint" id="lint" style="color: inherit; text-decoration: none;">
+					<h3>Lint</h3>
+				</a>
+				<p>Maps to <code>electronForge.lint</code>, will run the <code>lint</code> command that your <code>package.json</code> exposes. If the exit code is 0 no output is shown, otherwise the error output will be displayed.</p>
+				<blockquote>
+					<p>There are no flags for the Lint command</p>
+				</blockquote>
+				<a href="#make" id="make" style="color: inherit; text-decoration: none;">
+					<h3>Make</h3>
+				</a>
+				<p>Maps to <code>electronForge.make</code>, will make distributables for your application based on your forge config and the parameters you pass in.</p>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">Flag</th>
+							<th align="left">Value</th>
+							<th align="left">Required</th>
+							<th align="left">Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="left"><code>--arch</code></td>
+							<td align="left">Architecture E.g. <code>x64</code></td>
+							<td align="left">No</td>
+							<td align="left">Target architecture to make for</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--platform</code></td>
+							<td align="left">Platform E.g. <code>mas</code></td>
+							<td align="left">No</td>
+							<td align="left">Target platform to make for, please note you normally can only target platform X from platform X</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--targets</code></td>
+							<td align="left">Comma separated list of maker names</td>
+							<td align="left">No</td>
+							<td align="left">Override your make targets for this run</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--skip-package</code></td>
+							<td align="left">N/A</td>
+							<td align="left">No</td>
+							<td align="left">Set if you want to skip the packaging step, useful if you are running sequential makes and want to save time</td>
+						</tr>
+				</tbody></table>
+				<a href="#package" id="package" style="color: inherit; text-decoration: none;">
+					<h3>Package</h3>
+				</a>
+				<p>Maps to <code>electronForge.package</code>, will package your application into a platform specific format and put the result in a folder. Please note that this does not make a distributable format, to make proper distributables please use the <a href="/api/cli/cli.md#make">make</a> command.</p>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">Flag</th>
+							<th align="left">Value</th>
+							<th align="left">Required</th>
+							<th align="left">Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="left"><code>--arch</code></td>
+							<td align="left">Architecture E.g. <code>x64</code></td>
+							<td align="left">No</td>
+							<td align="left">Target architecture to package for. Defaults to the host arch.</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--platform</code></td>
+							<td align="left">Platform E.g. <code>mas</code></td>
+							<td align="left">No</td>
+							<td align="left">Target platform to package for. Defaults to the host platform.</td>
+						</tr>
+				</tbody></table>
+				<a href="#publish" id="publish" style="color: inherit; text-decoration: none;">
+					<h3>Publish</h3>
+				</a>
+				<p>Maps to <code>electronForge.publish</code>, will attempt to make the forge application and then publish it to the publish targets defined in your forge config.</p>
+				<p>If you want to publish previously created <code>make</code> artifacts you will have to use the <code>dry-run</code> options explained below.</p>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">Flag</th>
+							<th align="left">Value</th>
+							<th align="left">Required</th>
+							<th align="left">Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="left"><code>--target</code></td>
+							<td align="left">Comma separated list of publisher names</td>
+							<td align="left">No</td>
+							<td align="left">Override your publish targets for this run</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--dry-run</code></td>
+							<td align="left">N/A</td>
+							<td align="left">No</td>
+							<td align="left">Triggers a publish dry run which saves state and doesn&#39;t upload anything</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--from-dry-run</code></td>
+							<td align="left">N/A</td>
+							<td align="left">No</td>
+							<td align="left">Attempts to publish artifacts from any dry runs saved on disk</td>
+						</tr>
+				</tbody></table>
+				<a href="#start" id="start" style="color: inherit; text-decoration: none;">
+					<h3>Start</h3>
+				</a>
+				<p>Maps to <code>electronForge.start</code>, will launch the Forge powered application in the given directory (defaults to <code>.</code>).</p>
+				<p>If you type <code>rs</code> (and hit enter) in the same terminal where you ran the start command, the running app will be terminated and restarted.</p>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">Flag</th>
+							<th align="left">Value</th>
+							<th align="left">Required</th>
+							<th align="left">Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="left"><code>--app-path</code></td>
+							<td align="left">Path to your app from CWD</td>
+							<td align="left">No</td>
+							<td align="left">Override the path to the Electron app to launch (defaults to <code>.</code>)</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--enable-logging</code></td>
+							<td align="left">N/A</td>
+							<td align="left">No</td>
+							<td align="left">Enable advanced logging. This will log internal Electron things</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--run-as-node</code></td>
+							<td align="left">N/A</td>
+							<td align="left">No</td>
+							<td align="left">Run the Electron app as a Node.JS script</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--inspect-electron</code></td>
+							<td align="left">N/A</td>
+							<td align="left">No</td>
+							<td align="left">Triggers inspect mode on Electron to allow debugging the main process</td>
+						</tr>
+						<tr>
+							<td align="left"><code>--</code></td>
+							<td align="left">extra arguments</td>
+							<td align="left">No</td>
+							<td align="left">Any additional arguments to pass to Electron or the app itself. For example: <code>-- --my-app-argument</code></td>
+						</tr>
+				</tbody></table>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="/api/cli/globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-variable">
+						<a href="/api/cli/globals.html#skip_system_check" class="tsd-kind-icon">SKIP_<wbr>SYSTEM_<wbr>CHECK</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/cli/globals.html#d" class="tsd-kind-icon">d</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/cli/globals.html#originalsc" class="tsd-kind-icon">originalSC</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/cli/globals.html#checkgitexists" class="tsd-kind-icon">check<wbr>Git<wbr>Exists</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/cli/globals.html#checknodeversion" class="tsd-kind-icon">check<wbr>Node<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/cli/globals.html#checkpackagemanagerversion" class="tsd-kind-icon">check<wbr>Package<wbr>Manager<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/cli/globals.html#default" class="tsd-kind-icon">default</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/cli/globals.html#getmakeoptions" class="tsd-kind-icon">get<wbr>Make<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/cli/globals.html#validpackagemanagerversion" class="tsd-kind-icon">valid<wbr>Package<wbr>Manager<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/cli/globals.html#warnifpackagemanagerisntaknowngoodversion" class="tsd-kind-icon">warn<wbr>IfPackage<wbr>Manager<wbr>IsntAKnown<wbr>Good<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="/api/cli/globals.html#npm_whitelisted_versions" class="tsd-kind-icon">NPM_<wbr>WHITELISTED_<wbr>VERSIONS</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="/api/cli/globals.html#yarn_whitelisted_versions" class="tsd-kind-icon">YARN_<wbr>WHITELISTED_<wbr>VERSIONS</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="/assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="/assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@electron-forge/core</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="/assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="/api/core/index.html" class="title">@electron-forge/core</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="/api/core/globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@electron-forge/core</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#electron-forge-core" id="electron-forge-core" style="color: inherit; text-decoration: none;">
+					<h1>Electron Forge Core</h1>
+				</a>
+				<p>This module contains the core logic of Electron Forge and exposes the base
+				API as a number of simple JS functions.</p>
+				<a href="#basic-usage" id="basic-usage" style="color: inherit; text-decoration: none;">
+					<h2>Basic Usage</h2>
+				</a>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { api } <span class="hljs-keyword">from</span> <span class="hljs-string">'@electron-forge/core'</span>
+
+<span class="hljs-comment">// Package the current directory as an Electron app</span>
+api.package(__dirname);</code></pre>
+				<p>The named export <code>api</code> has it&#39;s methods documented over at <a href="https://js.electronforge.io/api/core/classes/forgeapi">ForgeAPI</a>.
+					All the methods are async and expose the core forge methods, please note that all
+					user-side configuration is still done through your forge config file or the &quot;config.forge&quot;
+					section of your package.json.  This API simply let&#39;s you call the methods in
+				node land without using the CLI.</p>
+				<a href="#error-handling" id="error-handling" style="color: inherit; text-decoration: none;">
+					<h2>Error Handling</h2>
+				</a>
+				<p>As all methods return a promise you should handle all rejections, you should note
+					that rejections will <strong>not</strong> always be errors, in fact we commonly reject our
+					promises with just strings so do not assume that properties such as <code>stack</code> or
+				<code>message</code> will exist on thrown errors.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="/api/core/globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="/api/core/enums/deptype.html" class="tsd-kind-icon">Dep<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="/api/core/enums/depversionrestriction.html" class="tsd-kind-icon">Dep<wbr>Version<wbr>Restriction</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="/api/core/classes/forgeapi.html" class="tsd-kind-icon">ForgeAPI</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="/api/core/classes/forgeutils.html" class="tsd-kind-icon">Forge<wbr>Utils</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="/api/core/classes/installerimpl.html" class="tsd-kind-icon">Installer<wbr>Impl</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="/api/core/classes/makerimpl.html" class="tsd-kind-icon">Maker<wbr>Impl</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="/api/core/classes/packagenotfounderror.html" class="tsd-kind-icon">Package<wbr>Not<wbr>Found<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="/api/core/classes/plugininterface.html" class="tsd-kind-icon">Plugin<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="/api/core/classes/publishstate.html" class="tsd-kind-icon">Publish<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="/api/core/interfaces/asset.html" class="tsd-kind-icon">Asset</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="/api/core/interfaces/importoptions.html" class="tsd-kind-icon">Import<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="/api/core/interfaces/initoptions.html" class="tsd-kind-icon">Init<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="/api/core/interfaces/installoptions.html" class="tsd-kind-icon">Install<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="/api/core/interfaces/lintoptions.html" class="tsd-kind-icon">Lint<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="/api/core/interfaces/makeoptions.html" class="tsd-kind-icon">Make<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="/api/core/interfaces/packageoptions.html" class="tsd-kind-icon">Package<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="/api/core/interfaces/publishoptions.html" class="tsd-kind-icon">Publish<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="/api/core/interfaces/release.html" class="tsd-kind-icon">Release</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="/api/core/globals.html#electronpackageraftercopyhook" class="tsd-kind-icon">Electron<wbr>Packager<wbr>After<wbr>Copy<wbr>Hook</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="/api/core/globals.html#maketarget" class="tsd-kind-icon">Make<wbr>Target</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="/api/core/globals.html#maketargets" class="tsd-kind-icon">Make<wbr>Targets</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="/api/core/globals.html#possiblemodule" class="tsd-kind-icon">Possible<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#base_out_dir" class="tsd-kind-icon">BASE_<wbr>OUT_<wbr>DIR</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#extension" class="tsd-kind-icon">EXTENSION</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#github_api" class="tsd-kind-icon">GITHUB_<wbr>API</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#allofficialarchsforplatformandversion" class="tsd-kind-icon">all<wbr>Official<wbr>Archs<wbr>For<wbr>Platform<wbr>And<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#api" class="tsd-kind-icon">api</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#corepackage" class="tsd-kind-icon">core<wbr>Package</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#d" class="tsd-kind-icon">d</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#deps" class="tsd-kind-icon">deps</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#devdeps" class="tsd-kind-icon">dev<wbr>Deps</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#electronpackagenames" class="tsd-kind-icon">electron<wbr>Package<wbr>Names</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#exactdevdeps" class="tsd-kind-icon">exact<wbr>Dev<wbr>Deps</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#forge5makermappings" class="tsd-kind-icon">forge5<wbr>Maker<wbr>Mappings</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#forge5publishermappings" class="tsd-kind-icon">forge5<wbr>Publisher<wbr>Mappings</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#nugget" class="tsd-kind-icon">nugget</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="/api/core/globals.html#utils" class="tsd-kind-icon">utils</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#determinenodemodulespath" class="tsd-kind-icon">determine<wbr>Node<wbr>Modules<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#findancestornodemodulespath" class="tsd-kind-icon">find<wbr>Ancestor<wbr>Node<wbr>Modules<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#findelectrondep" class="tsd-kind-icon">find<wbr>Electron<wbr>Dep</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#forgeconfigisvalidfilepath" class="tsd-kind-icon">forge<wbr>Config<wbr>IsValid<wbr>File<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="/api/core/globals.html#frombuildidentifier" class="tsd-kind-icon">from<wbr>Build<wbr>Identifier</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#generateforgemakerconfig" class="tsd-kind-icon">generate<wbr>Forge<wbr>Maker<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#generateforgepublisherconfig" class="tsd-kind-icon">generate<wbr>Forge<wbr>Publisher<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#generatetargets" class="tsd-kind-icon">generate<wbr>Targets</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#getelectronmodulename" class="tsd-kind-icon">get<wbr>Electron<wbr>Module<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#getelectronmodulepath" class="tsd-kind-icon">get<wbr>Electron<wbr>Module<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#getelectronpackagejsonpath" class="tsd-kind-icon">get<wbr>Electron<wbr>PackageJSONPath</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#getelectronversion" class="tsd-kind-icon">get<wbr>Electron<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#hasyarn" class="tsd-kind-icon">has<wbr>Yarn</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#info" class="tsd-kind-icon">info</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#isinstalled" class="tsd-kind-icon">is<wbr>Installed</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#mapmaketargets" class="tsd-kind-icon">map<wbr>Make<wbr>Targets</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#parsearchs" class="tsd-kind-icon">parse<wbr>Archs</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="/api/core/globals.html#proxify" class="tsd-kind-icon">proxify</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#publish" class="tsd-kind-icon">publish</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#readmutatedpackagejson" class="tsd-kind-icon">read<wbr>Mutated<wbr>Package<wbr>Json</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#readrawpackagejson" class="tsd-kind-icon">read<wbr>Raw<wbr>Package<wbr>Json</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#renderconfigtemplate" class="tsd-kind-icon">render<wbr>Config<wbr>Template</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="/api/core/globals.html#requiresearchraw" class="tsd-kind-icon">require<wbr>Search<wbr>Raw</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#resolvehooks" class="tsd-kind-icon">resolve<wbr>Hooks</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#runhook" class="tsd-kind-icon">run<wbr>Hook</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="/api/core/globals.html#runmutatinghook" class="tsd-kind-icon">run<wbr>Mutating<wbr>Hook</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#safeyarnornpm" class="tsd-kind-icon">safe<wbr>Yarn<wbr>OrNpm</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#sequentialhooks" class="tsd-kind-icon">sequential<wbr>Hooks</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#setinitialforgeconfig" class="tsd-kind-icon">set<wbr>Initial<wbr>Forge<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#siblingdep" class="tsd-kind-icon">sibling<wbr>Dep</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#sudo" class="tsd-kind-icon">sudo</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#transformgithubpublisherconfig" class="tsd-kind-icon">transform<wbr>Git<wbr>Hub<wbr>Publisher<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#underscorecase" class="tsd-kind-icon">underscore<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#updateelectrondependency" class="tsd-kind-icon">update<wbr>Electron<wbr>Dependency</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#updateupgradedforgedevdeps" class="tsd-kind-icon">update<wbr>Upgraded<wbr>Forge<wbr>Dev<wbr>Deps</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#upgradeforgeconfig" class="tsd-kind-icon">upgrade<wbr>Forge<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#warn" class="tsd-kind-icon">warn</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#which" class="tsd-kind-icon">which</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="/api/core/globals.html#yarnornpmspawn" class="tsd-kind-icon">yarn<wbr>OrNpm<wbr>Spawn</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="/assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="/assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
