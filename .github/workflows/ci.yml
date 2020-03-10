@@ -137,4 +137,4 @@ jobs:
           showUnderscoreFiles: true
           versionDocs: true
         env:
-          GH_PAGES_SSH_DEPLOY_KEY: ${{ secrets.GH_PAGES_SSH_DEPLOY_KEY }}
+          GH_PAGES_SSH_DEPLOY_KEY: ${{ secrets.DEPENDABOLT_SSH_DEPLOY_KEY }}
